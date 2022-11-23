@@ -122,3 +122,9 @@ addEventListener('wheel', () => {
         window.scrollTo(0, screenHeight*2);
     }
 });
+
+/* PRELOAD */
+let loader = document.getElementById('preloader');
+window.addEventListener('load', function(){
+    loader.style.display = "none";
+});
