@@ -45,11 +45,11 @@ location.reload();
 
 /*VIDEO SECTION*/
 /* Precarga de videos?? || Preload videos?? */
-
 let vBG11 = document.getElementById('vBG1');
 let vBG22 = document.getElementById('vBG2');
 let vBG33 = document.getElementById('vBG3');
 let vBG44 = document.getElementById('vBG4');
+
 /* Centrar videos en pantalla || Centre videos on screen*/
 vBG11.style.top = centerHeight + "px";
 vBG11.style.left = centerWidth + "px";
