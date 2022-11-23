@@ -1,0 +1,141 @@
+/* Carga tu fuente desde aqui || Upload your font from here */ 
+:root {
+--system-ui: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+scroll-behavior: smooth;
+}  
+/*Personaliza scroll bar || Customize the scroll bar*/                        
+body::-webkit-scrollbar {
+    width: 10px; 
+    display: none;
+}
+body::-webkit-scrollbar-track {
+    background-color: #333;
+}
+body::-webkit-scrollbar-thumb {
+    background-color: #ddd8;
+    border-radius: 10px;
+    border: 3px solid #333;
+}
+/*Estilos comunes || Common styles*/
+body{
+    height: 100vh;
+    width: 100vw;
+    margin: 0; 
+    padding: 0; 
+    overflow-x: hidden;
+    font-family: var(--system-ui);
+    font-weight: 400;
+    color: #ddd;
+}
+h1 {
+    font-size: 3.5rem;
+    line-height: 3.7rem;
+    font-weight: 700;
+}
+section{
+    height: 100vh;
+    width: 100%;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+a:hover {
+    text-decoration: none;
+    color: inherit;
+}
+.glass{
+    max-width: 600px;
+    background-color: #ddd0; 
+    backdrop-filter: blur(25px); 
+    border-bottom: 3px solid #dddddd0e;
+    box-shadow: 0 15px 15px #44cdff0e;
+}
+.contentSection{
+    padding: 20px 30px; 
+    margin: auto;
+    margin-bottom: 10px; 
+    height: fit-content; 
+    border-radius: 10px;
+    z-index: 1000;
+}
+.subCard{
+    padding: 10px 15px; 
+    border-radius: 8px; 
+    border: 1px solid rgb(66, 66, 66);
+    margin-top: 5px;
+}
+/* Botón de idioma || Language Button */
+.btn-text{
+    background-color: rgba(31, 31, 31, 0); 
+    border-radius: 5px;
+    padding: 2px 4px 3px 4px;
+    transition: all 0.5s;
+    color: #333;
+}
+.btn-text:hover{
+    background-color: rgba(31, 31, 31, 1); 
+    color: #ddd;
+    filter: drop-shadow(0px 0px 6px #44ccff);
+    transition: all 0.5s;
+}
+/*Establece la opcaidad inicial de la clase fadeMode || Set the initial opacity of fadeMode class*/
+.fadeMode{
+    cursor: pointer;
+    opacity: 0.3;
+    transition: all 0.5s;
+}
+.fadeMode p{
+    opacity: 0.3;
+    transition: all 0.5s;
+}
+.fadeMode:hover, .fadeMode:hover p{
+    opacity: 1;
+}
+.glare:hover{
+    transition: all 0.5s;
+    filter: drop-shadow(0px 0px 6px #44ccff);
+}
+/* Efectos de entrada || Entry effects */
+.hidden{
+    opacity: 0;
+    filter: blur(5px);
+    transform: scale(0.7, 0.7);
+    transition: all 1.5s ease-in-out;
+}
+.hidden:nth-child(2){
+    transition-delay: 1000ms;
+}
+.show{
+    opacity: 1;
+    filter: blur(0);
+    transform: scale(1, 1);
+}
+@media(prefers-reduce-motion){
+    .hidden{
+        transition: none;
+    }
+}
+.tittle{
+    color: #44ccff;
+    animation: tittle 5s infinite;
+}
+@keyframes tittle {
+    0%{filter: blur(5px);}
+    50%{filter: blur(2px);}
+    100%{filter: blur(5px);}
+}
+/*Preloader*/
+#preloader{
+    background: rgb(214, 214, 214)  center center;
+    background-size: 50px;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    z-index: 10000;
+}
+#preloader img{
+    width: 50px;
+    margin-top: 47vh;
+    margin-left: 47vw;
+}
