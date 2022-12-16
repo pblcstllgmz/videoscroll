@@ -74,23 +74,15 @@
         <canvas id="videoScroll" style="position: fixed;"></canvas>
 
     <!-- VIDEOS SECTIONS -->
-        <!-- VIDEO SECTION 1 -->
-        <video 
-            width="1920" 
-            height="1080"
-            id="vBG1" 
-            style="position: fixed;" 
-            autoplay loop preload>
-            <source src="img/VideoSection/vBG1.mp4" type="video/mp4">
-            Your browser dont support this video format.
-        </video>
+        
         <!-- VIDEO SECTION 2 -->
         <video 
             width="1920" 
             height="1080"
             id="vBG2" 
             style="position: fixed; opacity: 0;" 
-            autoplay loop preload>
+            autoplay loop muted
+            preload="auto">
             <source src="img/VideoSection/vBG2.mp4" type="video/mp4">
             Your browser dont support this video format.
         </video>
@@ -100,7 +92,8 @@
             height="1080"
             id="vBG3" 
             style="position: fixed; opacity: 0;" 
-            autoplay loop preload>
+            autoplay loop muted
+            preload="auto">
             <source src="img/VideoSection/vBG3.mp4" type="video/mp4">
             Your browser dont support this video format.
         </video>
@@ -110,11 +103,22 @@
             height="1080"
             id="vBG4" 
             style="position: fixed; opacity: 0;" 
-            autoplay loop preload>
+            autoplay loop muted
+            preload="auto">
             <source src="img/VideoSection/vBG4.mp4" type="video/mp4">
             Your browser dont support this video format.
         </video>
-
+        <!-- VIDEO SECTION 1 -->
+        <video 
+        width="1920" 
+        height="1080"
+        id="vBG1" 
+        style="position: fixed;opacity: 1;" 
+        autoplay loop muted
+        preload="auto">
+        <source src="img/VideoSection/vBG1.mp4" type="video/mp4">
+        Your browser dont support this video format.
+        </video>
     <!--CONTENT -->
         <!-- SECTION 1 -->
         <section id="page1" class="d-flex flex-column justify-content-center align-items-center text-center pt-5">
@@ -276,9 +280,7 @@
                 <p class="subCard text-left hidden" style="background-color: rgb(41, 41, 41);">
                     <small class="esp text-light">
                       <b>Versión 0.1</b>  - Errores: </br>
-                      <span class="text-danger">
-                        JS - No precarga los videos, hay que redimensionar varias veces para que aparezcan.
-                      </span></br>
+                      
                         HTML - No se puede quitar Bootstrap.</br>
                         JS - Evento 'wheel' para imantar al ancla.</br>
                         JS - No se puede usar WebP y WebM con trasparencia: 'canvas.clearRect()'.</br>
@@ -286,9 +288,7 @@
                     </small>
                     <small class="eng text-light">
                        <b>Version 0.1</b> - Bugs: </br>
-                       <span class="text-danger">
-                        JS - It doesn't preload the videos, you have to resize them several times to appear.
-                      </span></br>
+                       
                         HTML - Bootstrap cannot be removed.</br>
                         JS - 'wheel' event for anchor magnet.</br>
                         JS - WebP and WebM cannot be used with transparency: 'canvas.clearRect()'.</br>
@@ -334,9 +334,22 @@
         <script>
             /* PRELOAD */
             let loader = document.getElementById('preloader');
+            let vBG1 = document.getElementById('vBG1');
+            vBG1.autoplay = true;
+            function comenzar() {
+                vBG1.play();
+            }
+            
+            vBG1.addEventListener('canplaythrough', function() {
+                
+            });
+
             window.addEventListener('load', function(){
+                vBG1.load();
+
                 loader.style.display = "none";
             });
+            
         </script>  
     </body>
 </html>
