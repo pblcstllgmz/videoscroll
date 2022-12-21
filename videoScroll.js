@@ -40,8 +40,17 @@ context.drawImage(img, centerWidth, centerHeight);
 
 /* Actualizar cuando se redimensiona la ventana || Update everything when resizing the window */
 window.addEventListener("resize", function() {
-location.reload();
-});
+    centerWidth = (window.innerWidth - canvas.width) / 2;
+    centerHeight = (window.innerHeight - canvas.height) / 2;
+    vBG1.style.top = centerHeight + "px";
+    vBG1.style.left = centerWidth + "px";
+    vBG2.style.top = centerHeight + "px";
+    vBG2.style.left = centerWidth + "px";
+    vBG3.style.top = centerHeight + "px";
+    vBG3.style.left = centerWidth + "px";
+    vBG4.style.top = centerHeight + "px";
+    vBG4.style.left = centerWidth + "px";
+  });
 
 /*VIDEO SECTION*/
 /* Precarga de videos?? || Preload videos?? */
@@ -106,20 +115,4 @@ window.addEventListener('scroll', () => {
     requestAnimationFrame(() => updateImage(frameIndex + 1));
 });
 
-/* Imantar al ancla con la rueda del ratón || Magnet the anchor with the mouse wheel */
-/* Solo funciona con la Section 2 y 3 || Only works with Section 2 and 3 
-   Los puntos clave los marca 'let difference' || The key points are marked by 'let difference'
-   section1 = 0, section2 = 1, section3 = 2, section4 = 3
-*/
-addEventListener('wheel', () => {
-    let scrolling = $(this).scrollTop();
-    let screenHeight = window.innerHeight;
-    let difference = scrolling / screenHeight;    
-    if (difference > 0.5 &&  difference < 1.25){
-        window.scrollTo(0, screenHeight);
-    }
-    else if (difference > 1.5 &&  difference < 2.25){
-        window.scrollTo(0, screenHeight*2);
-    }
-});
 
